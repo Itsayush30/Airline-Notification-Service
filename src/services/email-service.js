@@ -3,10 +3,10 @@ const { Mailer } = require("../config");
 
 const ticketRepository = new TicketRepository();
 
-async function sendEmail(mailForm, mailTo, subject, text) {
+async function sendEmail(mailFrom, mailTo, subject, text) {
   try {
     const response = await Mailer.sendMail({
-      from: mailForm,
+      from: mailFrom,
       to: mailTo,
       subject: subject,
       text: text,
@@ -29,7 +29,7 @@ async function createTicket(data) {
 
 async function getPendingEmails() {
   try {
-    const response = await ticketRepositoryo.getPendingTickets();
+    const response = await ticketRepository.getPendingTickets();
     return response;
   } catch (error) {
     console.log(error);

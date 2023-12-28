@@ -12,7 +12,7 @@ async function connectQueue() {
       const object = JSON.parse(`${Buffer.from(data.content)}`);
       // const object = JSON.parse(Buffer.from(data).toString());
       await EmailService.sendEmail(
-        "ayush.flightservice@gmail.com",
+        object.senderEmail,
         object.recipientEmail,
         object.subject,
         object.text
