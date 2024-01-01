@@ -5,6 +5,8 @@ const ticketRepository = new TicketRepository();
 
 async function sendEmail(mailFrom, mailTo, subject, text) {
   try {
+    console.log("insideService")
+    //console.log("Here->",mailFrom.to,mailTo)
     const response = await Mailer.sendMail({
       from: mailFrom,
       to: mailTo,
@@ -12,7 +14,8 @@ async function sendEmail(mailFrom, mailTo, subject, text) {
       text: text,
     });
   } catch (error) {
-    console.log(error);
+    console.log("mailError")
+    //console.log(error);
     throw error;
   }
 }

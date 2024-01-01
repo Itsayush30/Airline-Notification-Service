@@ -2,6 +2,7 @@ const express = require("express");
 
 const amqplib = require("amqplib");
 const { EmailService } = require("./services");
+const Cron = require("./utils/common/cron-jobs");
 async function connectQueue() {
   try {
     const connection = await amqplib.connect("amqp://localhost");
@@ -34,6 +35,8 @@ app.use("/api", apiRoutes);
 
 app.listen(ServerConfig.PORT, async () => {
   console.log(`Successfully started the server on PORT : ${ServerConfig.PORT}`);
+  console.log(Cron)
+  Cron();
   await connectQueue();
-    console.log("queue is up")
+  console.log("queue is up");
 });

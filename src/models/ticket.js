@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: "PENDING",
         allowNull: false,
       },
-      notificationTime: {
+       notificationTime: {
         type: DataTypes.DATE,
         allowNull: false,
       },

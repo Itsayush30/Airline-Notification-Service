@@ -44,3 +44,4 @@ module.exports = {
     await queryInterface.dropTable("Tickets");
   },
 };
+np
