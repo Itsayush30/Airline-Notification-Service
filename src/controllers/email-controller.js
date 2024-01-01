@@ -6,6 +6,7 @@ async function create(req, res) {
       subject: req.body.subject,
       content: req.body.content,
       recepientEmail: req.body.recepientEmail,
+      notificationTime: req.body.notificationTime,
     });
     return res.status(201).json(response);
   } catch (error) {
