@@ -36,7 +36,8 @@ app.use("/api", apiRoutes);
 app.listen(ServerConfig.PORT, async () => {
   console.log(`Successfully started the server on PORT : ${ServerConfig.PORT}`);
   console.log(Cron)
-  Cron();
+   Cron();
   await connectQueue();
   console.log("queue is up");
+ 
 });
